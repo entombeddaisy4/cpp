@@ -12,6 +12,9 @@ void playMastermind() {
     string code = randomizeString(size, 'A', 'A'+letters-1);
     while (true) {
         string guess = readInputToString(size, 'A', 'A'+letters-1);
+        if (guess == "cheat") {
+            cout << "Code is " << code << endl;
+        } 
         correctChars = checkCharacters(guess, code);
         correctPos = checkCharactersAndPosition(guess, code);
         if (correctPos == size) {
