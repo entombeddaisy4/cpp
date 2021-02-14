@@ -1,3 +1,10 @@
 {
-    "tdt4102.isProjectFolder": true
+    "tdt4102.isProjectFolder": true,
+    "files.associations": {
+        "iostream": "cpp",
+        "typeindex": "cpp",
+        "typeinfo": "cpp",
+        "iomanip": "cpp",
+        "ostream": "cpp"
+    }
 }

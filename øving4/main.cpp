@@ -9,33 +9,48 @@
 #include "std_lib_facilities.h"
 #include "utilities.h"
 #include "tests.h"
+#include "masterMind.h"
 //------------------------------------------------------------------------------'
 /*
 	Oppgave 1
 */
 //a)
 //Programmet printer ut v0=25
-
-
-// C++ programs start by executing the function main
-int incrementByValueNumTimes(int startValue, int increment, int numTimes) {
-for (int i = 0; i < numTimes; i++) {
-startValue += increment;
-}
-return startValue;
-}
-void testCallByValue() {
-int v0 = 5;
-int increment = 2;
-int iterations = 10;
-int result = incrementByValueNumTimes(v0, increment, iterations);
-cout << "v0: " << v0
-<< " increment: " << increment
-<< " iterations: " << iterations
-<< " result: " << result << endl;
-}
 int main() {
-testCallByValue();
+	srand(static_cast<unsigned int>(time(nullptr)));
+	int menuFunc = -1;
+	while (true) {
+		cout << "0) Exit\n";
+		cout << "1) Play Mastermind\n";
+		cout << "2) testCallByValue\n";
+		cout << "3) Test struct Student\n";
+
+		cout << "Choose function: \n";
+		cin >> menuFunc;
+
+		switch (menuFunc) {
+			case 0:
+				return 0;
+			case 1:
+				playMastermind();
+				break;
+			case 2:
+				testCallByValue();
+				testCallByReference();
+				testSwapNumbers();
+				break;
+			case 3:
+				{
+				Student jokke = {"Joakim", "MTKJ", 19};
+				printStudent(jokke);
+				cout << isInProgram(jokke, "MTKJ") << endl << isInProgram(jokke, "MTNANO") << endl;
+				break;
+				}
+			default:
+				cout << "Invalid input\n";
+				break;
+		}
+	}
 }
 
 //------------------------------------------------------------------------------
